@@ -1,0 +1,51 @@
+name: PastaClans
+author: bmlzootown
+version: 1.0 
+main: me.bmlzootown.PastaClans
+commands:
+     clan:
+          description: Testing
+     clans:
+          description: Testing
+     test:
+          description: Testing
+permissions:
+    pastaclans.*:
+        description: Gives access to all doorman commands
+        children:
+            pastaclans.create: true
+            pastaclans.info: true
+            pastaclans.invite: true
+            pastaclans.kick: true
+            pastaclans.home: true
+            pastaclans.sethome: true
+            pastaclans.leave: true
+            pastaclans.disband: true
+            pastaclans.accept: true
+            pastaclans.deny: true
+            pastaclans.give: true
+            pastaclans: true
+    pastaclans.create:
+        default: true
+    pastaclans.info:
+        default: true
+    pastaclans.invite:
+        default: true
+    pastaclans.kick:
+        default: true
+    pastaclans.home:
+        default: true
+    pastaclans.sethome:
+        default: true
+    pastaclans.leave:
+        default: true
+    pastaclans.disband:
+        default: true
+    pastaclans.accept:
+        default: true
+    pastaclans.deny:
+        default: true
+    pastaclans.give:
+        default: true
+    pastaclans:
+        default: true
