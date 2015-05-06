@@ -5,9 +5,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.logging.Logger;
-
 import net.md_5.bungee.api.ChatColor;
-
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.World;
@@ -58,18 +56,18 @@ public final class PastaClans extends JavaPlugin implements Listener{
 				final Player u = (Player)sender;
 				 if (args.length == 0) {
 					 u.sendMessage(ChatColor.BLUE + "" + ChatColor.BOLD + "------------ " + ChatColor.AQUA + "Pasta Clans" + ChatColor.BLUE + "" + ChatColor.BOLD + " ------------");
-					 u.sendMessage(ChatColor.AQUA + "/clan create [name] §3 Create a clan.");
-					 u.sendMessage(ChatColor.AQUA + "/clan invite [user] §3 Invite someone to your clan.");
-					 u.sendMessage(ChatColor.AQUA + "/clan give [user] §3 Gives clan to another member.");					 
-					 u.sendMessage(ChatColor.AQUA + "/clan accept §3 Accept a clan invitation.");
-					 u.sendMessage(ChatColor.AQUA + "/clan deny §3 Deny a clan invitation.");
-					 u.sendMessage(ChatColor.AQUA + "/clan kick [user] §3 Kick a user from the clan.");
-					 u.sendMessage(ChatColor.AQUA + "/clan leave §3 Leave a clan.");
-					 u.sendMessage(ChatColor.AQUA + "/clan home §3 Go to the clan home.");
-					 u.sendMessage(ChatColor.AQUA + "/clan sethome §3 Set the clan home (leader only).");
-					 u.sendMessage(ChatColor.AQUA + "/clan info §3 See information about the clan.");
-					 u.sendMessage(ChatColor.AQUA + "/clan disband §3 Disband the clan (leader only).");
-					 u.sendMessage(ChatColor.AQUA + "/clan list §3 List all clans.");
+					 u.sendMessage(ChatColor.AQUA + "/clan create [name] Â§3 Create a clan.");
+					 u.sendMessage(ChatColor.AQUA + "/clan invite [user] Â§3 Invite someone to your clan.");
+					 u.sendMessage(ChatColor.AQUA + "/clan give [user] Â§3 Gives clan to another member.");					 
+					 u.sendMessage(ChatColor.AQUA + "/clan accept Â§3 Accept a clan invitation.");
+					 u.sendMessage(ChatColor.AQUA + "/clan deny Â§3 Deny a clan invitation.");
+					 u.sendMessage(ChatColor.AQUA + "/clan kick [user] Â§3 Kick a user from the clan.");
+					 u.sendMessage(ChatColor.AQUA + "/clan leave Â§3 Leave a clan.");
+					 u.sendMessage(ChatColor.AQUA + "/clan home Â§3 Go to the clan home.");
+					 u.sendMessage(ChatColor.AQUA + "/clan sethome Â§3 Set the clan home (leader only).");
+					 u.sendMessage(ChatColor.AQUA + "/clan info Â§3 See information about the clan.");
+					 u.sendMessage(ChatColor.AQUA + "/clan disband Â§3 Disband the clan (leader only).");
+					 u.sendMessage(ChatColor.AQUA + "/clan list Â§3 List all clans.");
 				 }
 				 
 				 if (args.length == 1) {
@@ -97,7 +95,7 @@ public final class PastaClans extends JavaPlugin implements Listener{
 					                for (int i = 0; i < Methods.getPlayers(clan).size(); i++) {
 					                  Player t = Bukkit.getPlayer((String)Methods.getPlayers(clan).get(i));
 					                  if (t != null) {
-					                    t.sendMessage(this.prefix + " §9" + u.getName() + " §bjoined the clan.");
+					                    t.sendMessage(this.prefix + " Â§9" + u.getName() + " Â§bjoined the clan.");
 					                  }
 					                }
 					              } else {
@@ -117,7 +115,7 @@ public final class PastaClans extends JavaPlugin implements Listener{
 					            if (this.invites.containsKey(u)) {
 					              u.sendMessage(this.prefix + ChatColor.AQUA + " You rejected the invitation.");
 					              if (this.invites.get(u) != null) {
-					                ((Player)this.invites.get(u)).sendMessage(this.prefix + " §9" + u.getName() + " §brejected the invitation.");
+					                ((Player)this.invites.get(u)).sendMessage(this.prefix + " Â§9" + u.getName() + " Â§brejected the invitation.");
 					              }
 					              this.invites.remove(u);
 					            } else {
@@ -135,12 +133,12 @@ public final class PastaClans extends JavaPlugin implements Listener{
 					              for (int i = 0; i < Methods.getPlayers(Methods.getClan(u)).size(); i++) {
 					                Player t = Bukkit.getPlayer((String)Methods.getPlayers(Methods.getClan(u)).get(i));
 					                if (t != null) {
-					                  t.sendMessage(this.prefix + " §9" + u.getName() + " §bleft the clan.");
+					                  t.sendMessage(this.prefix + " Â§9" + u.getName() + " Â§bleft the clan.");
 					                }
 					              }
 					              Methods.removePlayer(Methods.getClan(u), u);
 					            } else {
-					              u.sendMessage(this.prefix + ChatColor.AQUA + " Please use §9/clan disband" + ChatColor.AQUA + ".");
+					              u.sendMessage(this.prefix + ChatColor.AQUA + " Please use Â§9/clan disband" + ChatColor.AQUA + ".");
 					            }
 					          } else {
 					            u.sendMessage(this.prefix + ChatColor.AQUA + " You are not in a clan.");
@@ -214,10 +212,10 @@ public final class PastaClans extends JavaPlugin implements Listener{
 				              Player z = Bukkit.getServer().getPlayer(Methods.getOwner(Methods.getClan(u)));
 				              if (t != z) {
 				              if (t != null) {
-				                u.sendMessage("§b- " + t.getName() + " / " + t.getUniqueId());
+				                u.sendMessage("Â§b- " + t.getName() + " / " + t.getUniqueId());
 				              } else {
 				            	String UUID = PastaClans.plugin.getConfig().getString("Name." + (String)members.get(i).toLowerCase() + ".UUID");
-				                u.sendMessage("§b- §7" + (String)members.get(i) + " / " + UUID);
+				                u.sendMessage("Â§b- Â§7" + (String)members.get(i) + " / " + UUID);
 				              }
 				             }
 				            }
@@ -233,7 +231,7 @@ public final class PastaClans extends JavaPlugin implements Listener{
 					        	u.sendMessage(ChatColor.BLUE + "" + ChatColor.BOLD + "------------ " + ChatColor.AQUA + "Clans List" + ChatColor.BLUE + "" + ChatColor.BOLD + " ------------");
 					        	for (int i = 0; i < newString.length; i++) {
 					        			String names = getConfig().getString("Clans." + newString[i] + ".Name");
-					        			u.sendMessage("§b- " + names);
+					        			u.sendMessage("Â§b- " + names);
 					        	}   
 					        	} else {
 					        		u.sendMessage(this.prefix + ChatColor.AQUA +"  No clans currently exist.");
@@ -264,7 +262,7 @@ public final class PastaClans extends JavaPlugin implements Listener{
 				              if (!Methods.clanExists(tag)) {
 				                if (Methods.isValid(tag)) {
 				                	Methods.createClan(tag, u);
-				                  u.sendMessage(this.prefix + ChatColor.AQUA + " You created the clan §9" + tag + " §b.");
+				                  u.sendMessage(this.prefix + ChatColor.AQUA + " You created the clan Â§9" + tag + " Â§b.");
 				                } else {
 				                  u.sendMessage(this.prefix + ChatColor.AQUA + " This clan name is not valid.");
 				                }
@@ -309,10 +307,10 @@ public final class PastaClans extends JavaPlugin implements Listener{
 				                Player z = Bukkit.getServer().getPlayer(Methods.getOwner(clan));
 				                if (t != z) {
 				                if (t != null) {
-				                  u.sendMessage("§b- " + t.getName() + " / " + t.getUniqueId());
+				                  u.sendMessage("Â§b- " + t.getName() + " / " + t.getUniqueId());
 				                } else {
 				                  String UUID = PastaClans.plugin.getConfig().getString("Name." + (String)members.get(i).toLowerCase() + ".UUID");
-				                  u.sendMessage("§b- §7" + (String)members.get(i) + " / " + UUID);
+				                  u.sendMessage("Â§b- Â§7" + (String)members.get(i) + " / " + UUID);
 				                }
 				              }
 				              }
@@ -340,14 +338,14 @@ public final class PastaClans extends JavaPlugin implements Listener{
 				                      for (int i = 0; i < Methods.getPlayers(Methods.getClan(u)).size(); i++) {
 				                        Player tt = Bukkit.getPlayer((String)Methods.getPlayers(Methods.getClan(u)).get(i));
 				                        if (tt != null) {
-				                          tt.sendMessage(this.prefix + " §9 " + t.getName() + " §bwas kicked from the clan.");
+				                          tt.sendMessage(this.prefix + " Â§9 " + t.getName() + " Â§bwas kicked from the clan.");
 				                        }
 				                        t.sendMessage(this.prefix + ChatColor.AQUA + " You were kicked of the clan.");
 				                      }  
 				                     } else {
 				                    	 Methods.addPlayer(clanz, u);
 				                    	 u.sendMessage(this.prefix + ChatColor.AQUA + " You cannot kick yourself.");
-				                    	 u.sendMessage(this.prefix + ChatColor.AQUA + " Please use §9/clan disband.");
+				                    	 u.sendMessage(this.prefix + ChatColor.AQUA + " Please use Â§9/clan disband.");
 				                     }  
 				                    } else {
 				                      u.sendMessage(this.prefix + ChatColor.AQUA + " This player is not in your clan.");
@@ -355,7 +353,7 @@ public final class PastaClans extends JavaPlugin implements Listener{
 				                  } else {
 				                  	if (members.contains(off.toLowerCase())){
 				                  		Methods.removeOfflinePlayer(Methods.getClan(u), off);
-				                  		sender.sendMessage(this.prefix + " §9" + off + " §bwas kicked out of the clan.");
+				                  		sender.sendMessage(this.prefix + " Â§9" + off + " Â§bwas kicked out of the clan.");
 				                  	} else {
 				                          u.sendMessage(this.prefix + ChatColor.AQUA + " This player is not in your clan.");
 				                        }
@@ -380,11 +378,11 @@ public final class PastaClans extends JavaPlugin implements Listener{
 				                    if (!this.invites.containsKey(t)) {
 				                      if (t != u) {
 				                        invitePlayer(t, u);
-				                        u.sendMessage(this.prefix + ChatColor.AQUA + " You have invited §9" + t.getName() + " §bto the clan.");
+				                        u.sendMessage(this.prefix + ChatColor.AQUA + " You have invited Â§9" + t.getName() + " Â§bto the clan.");
 				                        t.sendMessage(" ");
-				                        t.sendMessage("§bYou have been invited to the clan §9" + Methods.getClanTag(u) + " §b.");
-				                        t.sendMessage("§bTo join it, type §9/clan accept.");
-				                        t.sendMessage("§bTo reject the invitation, type §9/clan deny.");
+				                        t.sendMessage("Â§bYou have been invited to the clan Â§9" + Methods.getClanTag(u) + " Â§b.");
+				                        t.sendMessage("Â§bTo join it, type Â§9/clan accept.");
+				                        t.sendMessage("Â§bTo reject the invitation, type Â§9/clan deny.");
 				                        t.sendMessage(" ");
 				                      } else {
 				                        u.sendMessage(this.prefix + ChatColor.AQUA + " You can't invite yourself.");
@@ -423,9 +421,9 @@ public final class PastaClans extends JavaPlugin implements Listener{
 	  public void onChat(AsyncPlayerChatEvent event)
 	  {
 	   // if (Methods.hasClan(event.getPlayer())) {
-	   //   event.setFormat("§b" + Methods.getClanTag(event.getPlayer()) + "§b§f*" + event.getPlayer().getDisplayName() + ": §f" + event.getMessage());
+	   //   event.setFormat("Â§b" + Methods.getClanTag(event.getPlayer()) + "Â§bÂ§f*" + event.getPlayer().getDisplayName() + ": Â§f" + event.getMessage());
 	   // } else {
-	   //   event.setFormat(" §f" + event.getPlayer().getDisplayName() + ": §f" + event.getMessage());
+	   //   event.setFormat(" Â§f" + event.getPlayer().getDisplayName() + ": Â§f" + event.getMessage());
 	   // }
 	    if (event.getMessage().startsWith(this.ccs)) {
 	      if (Methods.hasClan(event.getPlayer())) {
@@ -433,9 +431,9 @@ public final class PastaClans extends JavaPlugin implements Listener{
 	          Player t = Bukkit.getPlayer((String)Methods.getPlayers(Methods.getClan(event.getPlayer())).get(i));
 	          if (t != null) {
 	        	if (Methods.isOwner(event.getPlayer())) {  
-	        	  	t.sendMessage(ChatColor.DARK_AQUA + "[" + ChatColor.AQUA + PastaClans.plugin.getConfig().getString("Clans." + Methods.getClan(event.getPlayer()) + ".Name") + ChatColor.DARK_AQUA + "]" + ChatColor.DARK_PURPLE + " " + event.getPlayer().getName() + "§b: " + event.getMessage().substring(1, event.getMessage().length()));
+	        	  	t.sendMessage(ChatColor.DARK_AQUA + "[" + ChatColor.AQUA + PastaClans.plugin.getConfig().getString("Clans." + Methods.getClan(event.getPlayer()) + ".Name") + ChatColor.DARK_AQUA + "]" + ChatColor.DARK_PURPLE + " " + event.getPlayer().getName() + "Â§b: " + event.getMessage().substring(1, event.getMessage().length()));
 	          	} else {
-	          		t.sendMessage(ChatColor.DARK_AQUA + "[" + ChatColor.AQUA + PastaClans.plugin.getConfig().getString("Clans." + Methods.getClan(event.getPlayer()) + ".Name") + ChatColor.DARK_AQUA + "]" + ChatColor.DARK_AQUA + " " + event.getPlayer().getName() + "§b: " + event.getMessage().substring(1, event.getMessage().length()));
+	          		t.sendMessage(ChatColor.DARK_AQUA + "[" + ChatColor.AQUA + PastaClans.plugin.getConfig().getString("Clans." + Methods.getClan(event.getPlayer()) + ".Name") + ChatColor.DARK_AQUA + "]" + ChatColor.DARK_AQUA + " " + event.getPlayer().getName() + "Â§b: " + event.getMessage().substring(1, event.getMessage().length()));
 	          	}
 	          }
 	        }
