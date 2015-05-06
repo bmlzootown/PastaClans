@@ -4,14 +4,12 @@ version: 1.0
 main: me.bmlzootown.PastaClans
 commands:
      clan:
-          description: Testing
+          description: Information on PastaClans
      clans:
-          description: Testing
-     test:
-          description: Testing
+          description: Information on PastaClans
 permissions:
     pastaclans.*:
-        description: Gives access to all doorman commands
+        description: Gives access to all commands
         children:
             pastaclans.create: true
             pastaclans.info: true
